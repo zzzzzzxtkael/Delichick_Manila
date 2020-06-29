@@ -141,7 +141,6 @@ class ThemeController extends AbstractAdminController
             $data = $logosUploadForm->getData();
             try {
                 $this->getShopLogosFormHandler()->save($data['shop_logos']);
-
                 $this->addFlash(
                     'success',
                     $this->trans('The settings have been successfully updated.', 'Admin.Notifications.Success')

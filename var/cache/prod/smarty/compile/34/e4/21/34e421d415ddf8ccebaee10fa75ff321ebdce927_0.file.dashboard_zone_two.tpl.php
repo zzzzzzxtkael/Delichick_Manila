@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2020-06-03 16:17:55
+/* Smarty version 3.1.33, created on 2020-06-23 18:00:43
   from '/www/wwwroot/shop/modules/dashtrends/views/templates/hook/dashboard_zone_two.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ed80573c81175_66061634',
+  'unifunc' => 'content_5ef27b8b3e09f2_74692221',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '34e421d415ddf8ccebaee10fa75ff321ebdce927' => 
     array (
       0 => '/www/wwwroot/shop/modules/dashtrends/views/templates/hook/dashboard_zone_two.tpl',
-      1 => 1591214201,
+      1 => 1592949641,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ed80573c81175_66061634 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef27b8b3e09f2_74692221 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
 	var currency_format = <?php echo floatval($_smarty_tpl->tpl_vars['currency']->value->format);?>
@@ -92,6 +92,13 @@ echo '<script'; ?>
 </dt>
 				<dd class="data_value size_l"><span id="net_profits_score"></span></dd>
 				<dd class="dash_trend"><span id="net_profits_score_trends"></span></dd>
+		</dl>
+		<dl class="col-xs-4 col-lg-2 label-tooltip" onclick="selectDashtrendsChart(this, 'COST');" data-toggle="tooltip" data-original-title="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Net profit is a measure of the profitability of a venture after accounting for all Ecommerce costs. You can provide these costs by clicking on the configuration icon right above here.','d'=>'Modules.Dashtrends.Admin'),$_smarty_tpl ) );?>
+" data-placement="bottom">
+			<dt><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'COST','d'=>'Modules.Dashtrends.Admin'),$_smarty_tpl ) );?>
+</dt>
+			<dd class="data_value size_l"><span id="net_profits_score"></span></dd>
+			<dd class="dash_trend"><span id="net_profits_score_trends"></span></dd>
 		</dl>
 	</div>
 	<div id="dash_trends_chart1" class="chart with-transitions">

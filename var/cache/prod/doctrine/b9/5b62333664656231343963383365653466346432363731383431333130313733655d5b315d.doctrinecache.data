@@ -1,0 +1,17 @@
+1592956413
+s:3219:"HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 23 Jun 2020 21:53:32 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Vary: Accept-Encoding
+X-XSS-Protection: 1; mode=block;
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Referrer-Policy: strict-origin-when-cross-origin
+X-Permitted-Cross-Domain-Policies: none
+Expect-CT: enforce, max-age=604800
+Feature-Policy: accelerometer 'self'; ambient-light-sensor 'self'; autoplay 'self'; camera 'self'; encrypted-media 'self'; fullscreen 'self'; geolocation 'self'; gyroscope 'self'; magnetometer 'self'; microphone 'self'; midi 'self'; payment 'self'; picture-in-picture *; speaker 'self'; sync-xhr *; usb 'self'; vr 'self';
+X-Backend-Server: vm2730.jn-hebergement.com
+
+{"modules":[{"id":"22313","name":"ps_banner","displayName":"Banner","categoryName":"Blocks, Tabs & Banners","description":"Add a banner on your homepage to display sales or new products in a visual and friendly way","author":"PrestaShop","url":"https:\/\/addons.prestashop.com\/en\/blocks-tabs-banners\/22313-banner.html?utm_source=back-office&utm_medium=push-addons&utm_campaign=back-office-EN&utm_content=download","serviceUrl":"","img":"https:\/\/medias1.prestastore.com\/img\/pico\/22313.jpg","fullDescription":"Add a banner on your homepage to display sales or new products in a visual and friendly way.","additionalDescription":"Use this native module to:\r\n<ul>\r\n\t<li><strong>Address specific customers: <\/strong>you can create a banner for a specific language, and then target people from a specific localization.<\/li>\r\n\t<li><strong>Promote seasonal offers: <\/strong>it will help your customers to feel like shopping your products.<\/li>\r\n\t<li><strong>Highlight an important section of your store:<\/strong> your visitors will probably pay attention to and focus more on your catalog.<\/li>\r\n\t<li><strong>Succeed your sales:<\/strong> a client who feels welcomed will be more likely to come back shopping on your store.<\/li>\r\n<\/ul>\r\n","features":"Adding a large image to your front office, the Banner module displays a banner on your shop, with a link and a description. With the default Classic theme, this block appears at the bottom of the homepage but it can be displayed anywhere in the front office, set at the position of your choice.<br \/>\r\n<br \/>\r\nHow to add a banner on your homepage and connects with your customers:\r\n<ul>\r\n\t<li>Upload an image<\/li>\r\n\t<li>recommended dimensions are 1110 x 214 px<\/li>\r\n\t<li>Choose the language you want to address<\/li>\r\n\t<li>Add a target link<\/li>\r\n\t<li>Add a description for the banner<\/li>\r\n\t<li>It is displayed when you have your cursor on it<\/li>\r\n<\/ul>\r\n","customer_benefits":"","demo_video":"","version":"2.1.0","last_update":"2020-06-23 12:07:02","compatibility":{"from":"1.7.1.0","to":"1.7.7.0"},"price":{"EUR":0,"USD":0,"GBP":0},"badges":[{"label":"Made by PrestaShop","img":"https:\/\/medias2.prestastore.com\/themes\/prestastore\/img\/front\/sprites\/badges\/made-by-prestashop.png"}],"cover":{"small":"https:\/\/medias3.prestastore.com\/1271927-pprod\/banner.jpg","big":"https:\/\/medias3.prestastore.com\/1271927-pbig\/banner.jpg"}}]}";

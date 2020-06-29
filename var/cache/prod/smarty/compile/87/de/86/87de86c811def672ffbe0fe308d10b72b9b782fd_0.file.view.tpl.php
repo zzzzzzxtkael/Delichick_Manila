@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2020-06-11 16:56:08
+/* Smarty version 3.1.33, created on 2020-06-23 17:18:20
   from '/www/wwwroot/shop/admin912nyo4fx/themes/default/template/controllers/dashboard/helpers/view/view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ee29a6882ba76_06494414',
+  'unifunc' => 'content_5ef2719cec5181_51043582',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '87de86c811def672ffbe0fe308d10b72b9b782fd' => 
     array (
       0 => '/www/wwwroot/shop/admin912nyo4fx/themes/default/template/controllers/dashboard/helpers/view/view.tpl',
-      1 => 1591908948,
+      1 => 1592947083,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ee29a6882ba76_06494414 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef2719cec5181_51043582 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
 	var dashboard_ajax_url = '<?php echo $_smarty_tpl->tpl_vars['link']->value->getAdminLink('AdminDashboard');?>
@@ -116,7 +116,14 @@ echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escap
 		<div class="col-md-8 col-lg-7" id="hookDashboardZoneTwo">
 			<?php echo $_smarty_tpl->tpl_vars['hookDashboardZoneTwo']->value;?>
 
-					</div>
+						<div id="dashaddons" class="row-margin-bottom">
+				<a href="https://addons.prestashop.com/en/209-dashboards?utm_source=back-office&amp;utm_medium=dashboard&amp;utm_campaign=back-office-<?php echo mb_strtoupper($_smarty_tpl->tpl_vars['lang_iso']->value, 'UTF-8');?>
+&amp;utm_content=<?php if ($_smarty_tpl->tpl_vars['host_mode']->value) {?>cloud<?php } else { ?>download<?php }?>" class="_blank">
+					<i class="icon-plus"></i> <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Add more dashboard modules','d'=>'Admin.Dashboard.Feature'),$_smarty_tpl ) );?>
+
+				</a>
+			</div>
+		</div>
 		<div class="col-md-12 col-lg-2">
 			<section class="dash_news panel">
 				<h3><i class="icon-rss"></i> <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'PrestaShop News','d'=>'Admin.Dashboard.Feature'),$_smarty_tpl ) );?>

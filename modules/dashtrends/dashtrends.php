@@ -120,11 +120,20 @@ class dashtrends extends Module
             'average_cart_value' => array(),
             'visits' => array(),
             'conversion_rate' => array(),
-            'net_profits' => array()
+            'net_profits' => array(),
+            'total_cost' => array(),
+            'total_revenue' => array(),
+            'cost' => array(),
         );
 
         $from = strtotime($date_from.' 00:00:00');
         $to = min(time(), strtotime($date_to.' 23:59:59'));
+        // update123
+        $sql = "SELECT SUM(bill_cost) as cost, SUM(bill_revenue)  as revenue FROM `dm_addtional_bill` WHERE bill_date BETWEEN '".$date_from."' AND '". $date_to."'";
+        $result = DB::getInstance()->executeS($sql);
+        $refined_data['total_cost'][$date_from] = (float)$result[0]['cost'];
+        $refined_data['total_revenue'][$date_to] = (float)$result[0]['revenue'];
+
         for ($date = $from; $date <= $to; $date = strtotime('+1 day', $date)) {
             $refined_data['sales'][$date] = 0;
             if (isset($gross_data['total_paid_tax_excl'][$date])) {
@@ -145,9 +154,11 @@ class dashtrends extends Module
             }
             if (isset($gross_data['total_purchases'][$date])) {
                 $refined_data['net_profits'][$date] -= $gross_data['total_purchases'][$date];
+                $refined_data['cost'][$date] += $gross_data['total_purchases'][$date];
             }
             if (isset($gross_data['total_expenses'][$date])) {
                 $refined_data['net_profits'][$date] -= $gross_data['total_expenses'][$date];
+
             }
         }
         return $refined_data;
@@ -171,6 +182,13 @@ class dashtrends extends Module
         $summing['conversion_rate'] = $summing['visits'] ? $summing['orders'] / $summing['visits'] : 0;
         $summing['net_profits'] = array_sum($data['net_profits']);
 
+        //add 2020/06/24
+        $summing['total_cost'] = array_sum($data['total_cost']);
+        $summing['total_revenue'] = array_sum($data['total_revenue']);
+//        var_dump($summing);
+
+        $summing['net_profits'] = $summing['net_profits'] - $summing['total_cost'] + $summing['total_revenue'] ;
+        $summing['cost'] =array_sum($data['cost']) + $summing['total_cost'];
         return $summing;
     }
 
@@ -240,6 +258,7 @@ class dashtrends extends Module
                 'visits_score' => Tools::displayNumber($this->dashboard_data_sum['visits'], $this->currency),
                 'conversion_rate_score' => round(100 * $this->dashboard_data_sum['conversion_rate'], 2).'%',
                 'net_profits_score' => $net_profit_score,
+                'cost' => Tools::displayNumber($this->dashboard_data_sum['cost'], $this->currency)
             ),
             'data_trends' => $this->data_trends,
             'data_chart' => array('dash_trends_chart1' => $this->getChartTrends()),

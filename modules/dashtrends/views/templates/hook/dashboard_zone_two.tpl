@@ -72,6 +72,11 @@
 				<dd class="data_value size_l"><span id="net_profits_score"></span></dd>
 				<dd class="dash_trend"><span id="net_profits_score_trends"></span></dd>
 		</dl>
+		<dl class="col-xs-4 col-lg-2 label-tooltip" onclick="selectDashtrendsChart(this, 'COST');" data-toggle="tooltip" data-original-title="{l s='Net profit is a measure of the profitability of a venture after accounting for all Ecommerce costs. You can provide these costs by clicking on the configuration icon right above here.' d='Modules.Dashtrends.Admin'}" data-placement="bottom">
+			<dt>{l s='COST' d='Modules.Dashtrends.Admin'}</dt>
+			<dd class="data_value size_l"><span id="cost"></span></dd>
+			<dd class="dash_trend"><span id="net_profits_score_trends"></span></dd>
+		</dl>
 	</div>
 	<div id="dash_trends_chart1" class="chart with-transitions">
 		<svg></svg>

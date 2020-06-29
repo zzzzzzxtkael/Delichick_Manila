@@ -78,6 +78,8 @@ class AdminDashboardControllerCore extends AdminController
             'payment' => array('title' => $this->trans('Average bank fees per payment method', array(), 'Admin.Dashboard.Feature'), 'id' => 'payment'),
             'carriers' => array('title' => $this->trans('Average shipping fees per shipping method', array(), 'Admin.Dashboard.Feature'), 'id' => 'carriers'),
             'other' => array('title' => $this->trans('Other settings', array(), 'Admin.Dashboard.Feature'), 'id' => 'other'),
+
+            'bill' => array('title' => 'Extra revenue and cost', 'id' => 'bill'),
         );
         foreach ($forms as &$form) {
             $form['icon'] = 'tab-preferences';
@@ -213,6 +215,40 @@ class AdminDashboardControllerCore extends AdminController
             'suffix' => $currency->iso_code,
         );
 
+        $forms['bill']['fields']['revenue'] = array(
+            'title' => 'revenue',
+            'desc' => 'revenue_desc',
+            'validation' => 'isPrice',
+            'cast' => 'floatval',
+            'type' => 'text',
+            'defaultValue' => '0',
+            'suffix' => $currency->iso_code,
+        );
+        $forms['bill']['fields']['cost'] = array(
+            'title' => 'cost',
+            'desc' => 'cost_desc',
+            'validation' => 'isPrice',
+            'cast' => 'floatval',
+            'type' => 'text',
+            'defaultValue' => '0',
+            'suffix' => $currency->iso_code,
+        );
+
+        $forms['bill']['fields']['desc'] = array(
+            'title' => 'description',
+            'desc' => 'description',
+
+            'type' => 'textLang',
+            'defaultValue' => '',
+        );
+        $forms['bill']['fields']['date'] = array(
+            'title' => 'date',
+            'desc' => 'Date format YYYYMMDD',
+            'type' => 'textLang',
+            'defaultValue' => '',
+        );
+
+
         Media::addJsDef(array(
             'dashboard_ajax_url' => $this->context->link->getAdminLink('AdminDashboard'),
             'read_more' => '',
@@ -330,6 +366,26 @@ class AdminDashboardControllerCore extends AdminController
 
     public function postProcess()
     {
+        if(isset($_POST['cost'])){
+            // 1. get the revenue and cost
+            $data = array();
+            $data['cost'] = $_POST['cost'];
+            $data['revenue'] = $_POST['revenue'];
+            $data['desc'] = $_POST['desc_1'];
+            $data['date'] = $_POST['date_1'];
+            // 2. insert them into database;
+
+            $sql = "INSERT INTO `dm_addtional_bill`(`bill_cost`, `bill_revenue`, `bill_desc`, `bill_date`) VALUES (".$data['cost'].
+                ",".$data['revenue'].",'".$data['desc']."',".$data['date'].")";
+
+            $result = Db::getInstance()->execute($sql);
+            
+            if(!$result){
+                $this->errors[] = $this->trans('please recheck your input', array(), 'Admin.Notifications.Error');
+            }
+
+        }
+
         if (Tools::isSubmit('submitDateRealTime')) {
             if ($use_realtime = (int) Tools::getValue('submitDateRealTime')) {
                 $this->context->employee->stats_date_from = date('Y-m-d');
@@ -386,7 +442,7 @@ class AdminDashboardControllerCore extends AdminController
 
         $shop = Context::getContext()->shop;
         if ($_SERVER['HTTP_HOST'] != $shop->domain && $_SERVER['HTTP_HOST'] != $shop->domain_ssl && Tools::getValue('ajax') == false && !defined('_PS_HOST_MODE_')) {
-            $warning = $this->trans('You are currently connected under the following domain name:', array(), 'Admin.Dashboard.Notification') . ' <span style="color: #CC0000;">' . $_SERVER['HTTP_HOST'] . '</span><br />';
+            $warning = $this->trans('You are currently connected under the following domain name:', array(), 'Admin.Dashboard.Notification') . ' <span style="color: #cc0000;">' . $_SERVER['HTTP_HOST'] . '</span><br />';
             if (Configuration::get('PS_MULTISHOP_FEATURE_ACTIVE')) {
                 $warning .= $this->trans(
                     'This is different from the shop domain name set in the Multistore settings: "%s".',

@@ -1,0 +1,17 @@
+1592956403
+s:1964:"HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 23 Jun 2020 21:53:23 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Vary: Accept-Encoding
+X-XSS-Protection: 1; mode=block;
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Referrer-Policy: strict-origin-when-cross-origin
+X-Permitted-Cross-Domain-Policies: none
+Expect-CT: enforce, max-age=604800
+Feature-Policy: accelerometer 'self'; ambient-light-sensor 'self'; autoplay 'self'; camera 'self'; encrypted-media 'self'; fullscreen 'self'; geolocation 'self'; gyroscope 'self'; magnetometer 'self'; microphone 'self'; midi 'self'; payment 'self'; picture-in-picture *; speaker 'self'; sync-xhr *; usb 'self'; vr 'self';
+X-Backend-Server: vm2730.jn-hebergement.com
+
+{"modules":[{"id":"22321","name":"ps_mainmenu","displayName":"Main menu","categoryName":"Menu","description":"Adds a new menu to the top of your e-commerce website","author":"PrestaShop","url":"https:\/\/addons.prestashop.com\/en\/menu\/22321-main-menu.html?utm_source=back-office&utm_medium=push-addons&utm_campaign=back-office-EN&utm_content=download","serviceUrl":"","img":"https:\/\/medias1.prestastore.com\/img\/pico\/22321.jpg","fullDescription":"Adds a new menu to the top of your e-commerce website.","additionalDescription":"","features":"","customer_benefits":"","demo_video":"","version":"2.1.1","last_update":"2020-06-22 12:07:38","compatibility":{"from":"1.7.1.0","to":"1.7.7.0"},"price":{"EUR":0,"USD":0,"GBP":0},"badges":[{"label":"Made by PrestaShop","img":"https:\/\/medias2.prestastore.com\/themes\/prestastore\/img\/front\/sprites\/badges\/made-by-prestashop.png"}],"cover":{"small":"https:\/\/medias2.prestastore.com\/1293758-pprod\/main-menu.jpg","big":"https:\/\/medias2.prestastore.com\/1293758-pbig\/main-menu.jpg"},"pictures":{"small":["https:\/\/medias1.prestastore.com\/1293759-pprod\/main-menu.jpg"],"big":["https:\/\/medias1.prestastore.com\/1293759-pbig\/main-menu.jpg"]}}]}";

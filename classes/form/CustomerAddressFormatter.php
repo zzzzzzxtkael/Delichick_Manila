@@ -82,7 +82,10 @@ class CustomerAddressFormatterCore implements FormFormatterInterface
         foreach ($fields as $field) {
             $formField = new FormField();
             $formField->setName($field);
-
+//            var_dump($field);
+            if($field == 'company' || $field == 'address2'){
+                continue;
+            }
             $fieldParts = explode(':', $field, 2);
 
             if (count($fieldParts) === 1) {
@@ -92,6 +95,7 @@ class CustomerAddressFormatterCore implements FormFormatterInterface
                     }
                 } elseif ($field === 'phone') {
                     $formField->setType('tel');
+                    $formField->setRequired(true);
                 } elseif ($field === 'dni' && null !== $this->country) {
                     if ($this->country->need_identification_number) {
                         $formField->setRequired(true);
@@ -110,7 +114,8 @@ class CustomerAddressFormatterCore implements FormFormatterInterface
 
                 if ($entity === 'Country') {
                     $formField->setType('countrySelect');
-                    $formField->setValue($this->country->id);
+                    // hard write country
+                    $formField->setValue(172);
                     foreach ($this->availableCountries as $country) {
                         $formField->addAvailableValue(
                             $country['id_country'],
@@ -119,7 +124,8 @@ class CustomerAddressFormatterCore implements FormFormatterInterface
                     }
                 } elseif ($entity === 'State') {
                     if ($this->country->contains_states) {
-                        $states = State::getStatesByIdCountry($this->country->id, true);
+
+                        $states = State::getStatesByIdCountry(172, true);
                         foreach ($states as $state) {
                             $formField->addAvailableValue(
                                 $state['id_state'],

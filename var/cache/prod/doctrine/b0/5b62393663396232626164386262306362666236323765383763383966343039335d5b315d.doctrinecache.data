@@ -1,0 +1,17 @@
+1592954099
+s:3433:"HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 23 Jun 2020 21:14:59 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Vary: Accept-Encoding
+X-XSS-Protection: 1; mode=block;
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Referrer-Policy: strict-origin-when-cross-origin
+X-Permitted-Cross-Domain-Policies: none
+Expect-CT: enforce, max-age=604800
+Feature-Policy: accelerometer 'self'; ambient-light-sensor 'self'; autoplay 'self'; camera 'self'; encrypted-media 'self'; fullscreen 'self'; geolocation 'self'; gyroscope 'self'; magnetometer 'self'; microphone 'self'; midi 'self'; payment 'self'; picture-in-picture *; speaker 'self'; sync-xhr *; usb 'self'; vr 'self';
+X-Backend-Server: vm2730.jn-hebergement.com
+
+{"modules":[{"id":"15252","name":"dashproducts","displayName":"Dashboard Products","categoryName":"Dashboards","description":"Enrich the &lsquo;Dashboard&rsquo; section of your back office, add a block with a table of your latest orders and a ranking of your products","author":"PrestaShop","url":"https:\/\/addons.prestashop.com\/en\/dashboards\/15252-dashboard-products.html?utm_source=back-office&utm_medium=push-addons&utm_campaign=back-office-EN&utm_content=download","serviceUrl":"","img":"https:\/\/medias1.prestastore.com\/img\/pico\/15252.jpg","fullDescription":"Enrich the &lsquo;Dashboard&rsquo; section of your back office, add a block with a table of your latest orders and a ranking of your products.","additionalDescription":"Use this native module to:\r\n<ul>\r\n\t<li><strong>Retrieve data:<\/strong> these current values are essential to analyze your business and make it evolve in the right direction.<\/li>\r\n\t<li><strong>Create special offers:<\/strong> being aware of your best-selling items is useful to create special offers and make your visitors focus on specific parts of your catalog.<\/li>\r\n\t<li><strong>Handle your stock:<\/strong> keep an eye on the products that can soon be out-of-stock.<\/li>\r\n<\/ul>\r\n","features":"First, all you have to do is enable or disable the module. If enabled, it will be displayed in the &lsquo;Dashboard&rsquo; section of your back office.<br \/>\r\n<br \/>\r\nHere, data only focus on your catalog and let you know about four sections: recent orders, best sellers, most viewed, and top search.<br \/>\r\n<br \/>\r\nSecondly, to access its configuration board, click on the settings icon on the top right-hand corner of the frame, enter your margins and fees values&hellip; and let the list speak for itself!<br \/>\r\n<br \/>\r\nIt also allows you to keep the account of your stock movements and adjust it. In other words, it is a great tool to analyze your activity and to get acquainted with your customers.","customer_benefits":"","demo_video":"","version":"2.0.4","last_update":"2020-06-22 12:07:26","compatibility":{"from":"1.7.1.0","to":"1.7.7.0"},"price":{"EUR":0,"USD":0,"GBP":0},"badges":[{"label":"Made by PrestaShop","img":"https:\/\/medias2.prestastore.com\/themes\/prestastore\/img\/front\/sprites\/badges\/made-by-prestashop.png"}],"cover":{"small":"https:\/\/medias3.prestastore.com\/1294109-pprod\/dashboard-products.jpg","big":"https:\/\/medias3.prestastore.com\/1294109-pbig\/dashboard-products.jpg"},"pictures":{"small":["https:\/\/medias2.prestastore.com\/1294110-pprod\/dashboard-products.jpg"],"big":["https:\/\/medias2.prestastore.com\/1294110-pbig\/dashboard-products.jpg"]}}]}";
